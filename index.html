@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <script src="scripts/dice-game.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Dice Game</h1>
+        <h2>(Author: Pegah Salehi)</h2>
+    </header>
+    <div id="game">
+        <div id="player">
+            <h2>YOU</h2>
+            <div class="scene">
+                <div class="cube player-cube1">
+                    <div class="cube__face cube__face--1">1</div>
+                    <div class="cube__face cube__face--2">2</div>
+                    <div class="cube__face cube__face--3">3</div>
+                    <div class="cube__face cube__face--4">4</div>
+                    <div class="cube__face cube__face--5">5</div>
+                    <div class="cube__face cube__face--6">6</div>
+                </div>
+                <div class="cube player-cube2">
+                    <div class="cube__face cube__face--1">1</div>
+                    <div class="cube__face cube__face--2">2</div>
+                    <div class="cube__face cube__face--3">3</div>
+                    <div class="cube__face cube__face--4">4</div>
+                    <div class="cube__face cube__face--5">5</div>
+                    <div class="cube__face cube__face--6">6</div>
+                </div>
+            </div>
+            <p id="player-roll">Roll: [0, 0]</p>
+            <p id="player-score">Score: 0</p>
+            <p id="player-total">Total: 0</p>
+        </div>
+        <div id="computer">
+            <h2>OPPONENT</h2>
+            <div class="scene">
+                <div class="cube computer-cube1">
+                    <div class="cube__face cube__face--1">1</div>
+                    <div class="cube__face cube__face--2">2</div>
+                    <div class="cube__face cube__face--3">3</div>
+                    <div class="cube__face cube__face--4">4</div>
+                    <div class="cube__face cube__face--5">5</div>
+                    <div class="cube__face cube__face--6">6</div>
+                </div>
+                <div class="cube computer-cube2">
+                    <div class="cube__face cube__face--1">1</div>
+                    <div class="cube__face cube__face--2">2</div>
+                    <div class="cube__face cube__face--3">3</div>
+                    <div class="cube__face cube__face--4">4</div>
+                    <div class="cube__face cube__face--5">5</div>
+                    <div class="cube__face cube__face--6">6</div>
+                </div>
+            </div>
+            <p id="computer-roll">Roll: [0, 0]</p>
+            <p id="computer-score">Score: 0</p>
+            <p id="computer-total">Total: 0</p>
+        </div>
+    </div>
+    <button id="roll-button">Roll Dice</button>
+    <button id="reset-button">New Game</button>
+
+    <div id="popup">
+        <div class="popup-content">
+            <span id="close-popup">&times;</span>
+            <img src="images/white-dices.png" alt="White Dices" class="popup-dice-img">
+            <h2>How to Play</h2>
+            <ul>
+                <li>To start, click the 'Roll Dice' button.</li>
+                <li>To advance to the next round, click the Roll Dice button again.</li>
+                <li>After three rounds, the game is over and the final score is calculated.</li>
+                <li>If you want to play again, click the New Game button or refresh the page.</li>
+            </ul>
+            <br>
+            <hr>
+            <h2>Rules</h2>
+            <ul>
+                <li>Each round, you and the computer both roll a pair of dice.</li>
+                <li>Your score for that round will be based on the sum of the dice.</li>
+                <li>If you roll doubles (e.g. a 3 and a 3) then your score is multiplied by 2.</li>
+                <li>Rolling a 1 will give you a score of 0 for that round.</li>
+                <li>The player who has the most points at the end of three rounds is the winner.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="player-wins-popup" class="result-popup">
+        <div class="popup-content result-popup-content">
+            <span class="close-result-popup">&times;</span>
+            <div id="winner-panda-animation">
+                <img id="winner-panda-img" src="images/pandas/winner-panda-01.png" alt="Winner Panda">
+            </div>
+            <h2>Congratulations!</h2>
+            <p>You Won!</p>
+        </div>
+    </div>
+
+    <div id="computer-wins-popup" class="result-popup">
+        <div class="popup-content result-popup-content">
+            <span class="close-result-popup">&times;</span>
+            <div id="loser-panda-animation">
+                <img id="loser-panda-img" src="images/pandas/loser-panda-01.png" alt="Loser Panda">
+            </div>
+            <h2>Sorry!</h2>
+            <p>The Opponent Wins!</p>
+        </div>
+    </div>
+
+    <div id="tie-popup" class="result-popup">
+        <div class="popup-content result-popup-content">
+            <span class="close-result-popup">&times;</span>
+            <div id="tie-panda-animation">
+                <img id="tie-panda-img" src="images/pandas/tie-panda-01.png" alt="Tie Panda">
+            </div>
+            <h2>It's a Tie!</h2>
+            <p>You and the Opponent Have the Same Score!</p>
+        </div>
+    </div>
+
+    <div id="play-again-popup" class="result-popup">
+        <div class="popup-content result-popup-content">
+            <span class="close-play-again-popup">&times;</span>
+            <img src="images/dice-roll.png" alt="Dice Roll" class="play-again-img">
+            <h2>Play Again?</h2>
+            <p>If you want to play again, click the New Game button or refresh the page.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+@mixin button-style($bg-color, $width, $height) {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: $bg-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: $width;
+    height: $height;
+    font-family: 'Chakra Petch Regular', sans-serif;
+    font-weight: bold;
+  
+    &:hover {
+      background-color: darken($bg-color, 10%);
+    }
+  }
+  
