@@ -37,11 +37,6 @@ abbr[title] {
           text-decoration: underline dotted;
 }
 
-ol,
-ul {
-  list-style: none;
-}
-
 img {
   border-style: none;
 }
